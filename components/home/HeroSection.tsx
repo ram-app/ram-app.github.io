@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Button } from '../ui/Button';
 import { PERSONAL_INFO } from '@/lib/constants';
-import profileImage from "../../app/assets/photos/WhatsApp_Image_2024-08-29_at_19.56.11_89bd653d-removebg-preview.png"
+import profileImage from "../../app/assets/photos/ram.jpeg"
 
 export function HeroSection() {
   const [currentTitle, setCurrentTitle] = useState('');
@@ -270,20 +270,20 @@ export function HeroSection() {
               {/* Main Profile Image */}
               <motion.div
                 className="relative w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-600 p-1 shadow-2xl"
-                animate={{
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
+                // animate={{
+                //   rotate: [0, 360],
+                // }}
+                // transition={{
+                //   duration: 20,
+                //   repeat: Infinity,
+                //   ease: 'linear',
+                // }}
               >
-                <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
                   <img
                     src={profileImage?.src}
                     alt={PERSONAL_INFO.name}
-                    className="w-72 h-72 rounded-full object-contain object-top"
+                    className="w-[200%] h-[100%] object-cover object-[center_15%]"
                   />
                 </div>
               </motion.div>

@@ -17,27 +17,27 @@ export const PERSONAL_INFO = {
 export const EXPERIENCE = [
   {
     id: 1,
-    title: "Front-end Developer",
-    company: "Phantasm Solutions Pvt. Ltd.",
-    period: "2022 - Present",
-    description: "Led development of enterprise-level web applications using React, Node.js, and AWS. Mentored junior developers and improved team productivity by 40%.",
-    technologies: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"]
+    title: "Frontend Developer",
+    company: "Phantasm Solutions Pvt Ltd",
+    period: "2023 - Present",
+    description: "Leading 5+ frontend teams for enterprise-level web and mobile application development. Building scalable, responsive applications with modern frontend technologies and best practices.",
+    technologies: ["React.js", "Next.js", "React Native", "Docker", "Tailwind CSS", "Material UI", "Bootstrap"]
   },
   {
     id: 2,
-    title: "Frontend Developer",
-    company: "StartupXYZ",
-    period: "2020 - 2022",
-    description: "Built responsive web applications and mobile apps. Collaborated with UX designers to create intuitive user interfaces.",
-    technologies: ["React", "React Native", "JavaScript", "Sass", "Firebase"]
+    title: "Full Stack Web Development",
+    company: "Masai School",
+    period: "2022 - 2023",
+    description: "Completed intensive full stack web development program. Developed solo and collaborative projects, building real-world applications with modern web technologies.",
+    technologies: ["React", "JavaScript", "Node.js", "Express.js", "HTML", "CSS"]
   },
   {
     id: 3,
-    title: "Junior Developer",
-    company: "WebDev Agency",
-    period: "2019 - 2020",
-    description: "Developed client websites and learned modern web development practices. Gained experience in both frontend and backend technologies.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
+    title: "Computer Science Engineering",
+    company: "Sams Institute of Technologies",
+    period: "2019 - 2021",
+    description: "Pursued Computer Science Engineering with focus on both frontend and backend development. Gained strong foundation in programming fundamentals, data structures, algorithms, and web technologies.",
+    technologies: ["Python", "JavaScript", "Java", "C", "C++", "HTML", "CSS", "PHP"]
   }
 ];
 
@@ -106,34 +106,33 @@ export const PROJECTS = [
 
 export const SKILLS = {
   frontend: [
-    { name: "React", level: 95, icon: "ri-reactjs-line" },
+    { name: "React.js", level: 95, icon: "ri-reactjs-line" },
     { name: "Next.js", level: 90, icon: "ri-nextjs-line" },
-    { name: "TypeScript", level: 85, icon: "ri-code-line" },
+    { name: "React Native", level: 85, icon: "ri-smartphone-line" },
     { name: "JavaScript", level: 95, icon: "ri-javascript-line" },
-    { name: "HTML/CSS", level: 90, icon: "ri-html5-line" },
-    { name: "Tailwind CSS", level: 85, icon: "ri-css3-line" },
-    { name: "Sass", level: 80, icon: "ri-css3-line" },
-    { name: "Vue.js", level: 70, icon: "ri-vuejs-line" }
+    { name: "TypeScript", level: 85, icon: "ri-code-s-slash-line" },
+    { name: "Angular", level: 75, icon: "ri-angularjs-line" },
+    { name: "HTML/CSS", level: 95, icon: "ri-html5-line" },
+    { name: "Tailwind CSS", level: 90, icon: "ri-css3-line" }
   ],
   backend: [
-    { name: "Node.js", level: 90, icon: "ri-nodejs-line" },
+    { name: "Node.js", level: 85, icon: "ri-nodejs-line" },
     { name: "Express.js", level: 85, icon: "ri-server-line" },
-    { name: "Python", level: 80, icon: "ri-code-line" },
-    { name: "PostgreSQL", level: 85, icon: "ri-database-line" },
     { name: "MongoDB", level: 80, icon: "ri-database-line" },
-    { name: "Redis", level: 75, icon: "ri-database-line" },
-    { name: "GraphQL", level: 70, icon: "ri-code-line" },
     { name: "REST APIs", level: 90, icon: "ri-api-line" }
   ],
   tools: [
+    { name: "Tailwind CSS", level: 90, icon: "ri-css3-line" },
+    { name: "Material UI", level: 90, icon: "ri-palette-line" },
+    { name: "Bootstrap", level: 90, icon: "ri-layout-grid-line" },
     { name: "Git", level: 90, icon: "ri-git-branch-line" },
-    { name: "Docker", level: 80, icon: "ri-docker-line" },
-    { name: "AWS", level: 75, icon: "ri-cloud-line" },
+    { name: "GitHub", level: 90, icon: "ri-github-line" },
+    { name: "Docker", level: 75, icon: "ri-docker-line" },
     { name: "Vercel", level: 85, icon: "ri-cloud-line" },
-    { name: "Figma", level: 70, icon: "ri-palette-line" },
+    { name: "Netlify", level: 85, icon: "ri-global-line" },
     { name: "VS Code", level: 95, icon: "ri-code-line" },
-    { name: "Webpack", level: 75, icon: "ri-settings-line" },
-    { name: "Jest", level: 80, icon: "ri-test-tube-line" }
+    { name: "Cursor AI", level: 90, icon: "ri-robot-line" },
+    { name: "ChatGPT", level: 90, icon: "ri-openai-line" }
   ]
 };
 

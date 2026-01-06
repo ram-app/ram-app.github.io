@@ -2,78 +2,62 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Briefcase, Award, Users, Code, Rocket } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, Award, Code, Rocket } from 'lucide-react';
 
 const experiences = [
   {
     id: 1,
-    title: "Senior Full Stack Developer",
-    company: "TechCorp Solutions",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
-    description: "Leading development of enterprise-level web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
+    title: "Frontend Developer",
+    company: "Phantasm Solutions Pvt Ltd",
+    location: "Vijayawada, Andhra Pradesh",
+    period: "2023 - Present",
+    description: "Leading 5+ frontend teams for enterprise-level web and mobile application development. Building scalable, responsive applications with modern frontend technologies and best practices.",
     achievements: [
-      "Led team of 5 developers in delivering 3 major projects ahead of schedule",
-      "Improved application performance by 40% through optimization techniques",
-      "Implemented CI/CD pipeline reducing deployment time by 60%"
+      "Led 5+ frontend teams delivering enterprise-level web and mobile applications",
+      "Architected and developed responsive web apps using React.js and Next.js",
+      "Built cross-platform mobile applications using React Native"
     ],
-    technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB", "Docker"],
+    technologies: ["React.js", "Next.js", "React Native", "Docker", "Tailwind CSS", "Material UI", "Bootstrap"],
     icon: Rocket,
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
-    title: "Full Stack Developer",
-    company: "InnovateHub",
-    location: "Austin, TX",
-    period: "2020 - 2022",
-    description: "Developed and maintained scalable web applications for startup clients. Collaborated with cross-functional teams to deliver high-quality solutions.",
+    title: "Full Stack Web Development",
+    company: "Masai School",
+    location: "Bengaluru, Karnataka",
+    period: "2022 - 2023",
+    description: "Completed intensive full stack web development program. Developed solo and collaborative projects, building real-world applications with modern web technologies.",
     achievements: [
-      "Built 12+ web applications from concept to deployment",
-      "Reduced bug reports by 50% through comprehensive testing",
-      "Mentored 3 junior developers in modern web technologies"
+      "Built 10+ projects including solo and collaborative applications",
+      "Mastered full stack development with React and Node.js ecosystem",
+      "Collaborated with peers on team projects following agile methodologies"
     ],
-    technologies: ["Vue.js", "Express.js", "PostgreSQL", "Redis", "Kubernetes"],
+    technologies: ["React", "JavaScript", "Node.js", "Express.js", "HTML", "CSS"],
     icon: Code,
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
-    title: "Frontend Developer",
-    company: "Creative Digital Agency",
-    location: "New York, NY",
-    period: "2019 - 2020",
-    description: "Specialized in creating responsive, user-friendly interfaces for diverse clients. Worked closely with designers to implement pixel-perfect designs.",
+    title: "Computer Science Engineering",
+    company: "Sams Institute of Technologies",
+    location: "Varanasi, Uttar Pradesh",
+    period: "2019 - 2021",
+    description: "Pursued Computer Science Engineering with focus on both frontend and backend development. Gained strong foundation in programming fundamentals, data structures, algorithms, and web technologies.",
     achievements: [
-      "Delivered 20+ responsive websites with 98% client satisfaction",
-      "Improved website loading speed by 35% through optimization",
-      "Collaborated with UX team to enhance user experience"
+      "Learned complete software development lifecycle and best practices",
+      "Built multiple academic projects using various programming languages",
+      "Developed strong foundation in data structures and algorithms"
     ],
-    technologies: ["React", "Sass", "Webpack", "Figma", "Adobe Creative Suite"],
-    icon: Users,
+    technologies: ["Python", "JavaScript", "Java", "C", "C++", "HTML", "CSS", "PHP"],
+    icon: Award,
     color: "from-purple-500 to-pink-600"
   },
-  {
-    id: 4,
-    title: "Junior Web Developer",
-    company: "StartupLab",
-    location: "Boston, MA",
-    period: "2018 - 2019",
-    description: "Started career building dynamic web applications and learning modern development practices. Contributed to multiple client projects.",
-    achievements: [
-      "Contributed to 8 successful project launches",
-      "Learned and implemented modern JavaScript frameworks",
-      "Participated in agile development processes"
-    ],
-    technologies: ["JavaScript", "HTML/CSS", "Bootstrap", "jQuery", "PHP"],
-    icon: Award,
-    color: "from-yellow-500 to-orange-600"
-  }
 ];
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 overflow-x-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -124,10 +108,10 @@ export default function ExperiencePage() {
               {experiences.map((experience, index) => (
                 <motion.div
                   key={experience.id}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
                   className={`relative flex items-center ${
                     index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
                   }`}
@@ -227,9 +211,9 @@ export default function ExperiencePage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { number: "5+", label: "Years Experience", icon: Calendar },
-              { number: "40+", label: "Projects Completed", icon: Briefcase },
-              { number: "15+", label: "Technologies Mastered", icon: Code }
+              { number: "2+", label: "Years Experience", icon: Calendar },
+              { number: "10+", label: "Projects Completed", icon: Briefcase },
+              { number: "10+", label: "Technologies Mastered", icon: Code }
             ].map((stat, index) => (
               <motion.div
                 key={index}

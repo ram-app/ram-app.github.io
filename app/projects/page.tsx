@@ -15,7 +15,7 @@ export default function Projects() {
     : PROJECTS.filter(project => project.technologies.includes(filter));
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 overflow-x-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

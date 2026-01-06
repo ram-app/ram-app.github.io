@@ -2,60 +2,81 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { PERSONAL_INFO } from '@/lib/constants';
+import { PERSONAL_INFO, PROJECTS } from '@/lib/constants';
 import Image from 'next/image';
 import Logo from "../../app/assets/photos/CREATE_LOGO_WITH_THIS_NAME_Ram_Surat-removebg-preview.png"
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const quickLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Experience', href: '/experience' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Skills', href: '/skills' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
   return (
-    <footer className="bg-secondary/50 border-t border-border mt-20">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
+    <footer className="bg-secondary/50 border-t border-border mt-12">
+      <div className="container mx-auto px-4 py-8 lg:py-10">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+          
+          {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="col-span-1 md:col-span-2"
+            className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2"
           >
-            <Link href="/" className="text-2xl font-bold font-pacifico mb-4 block">
-              <Image src={Logo?.src} height={30} width={400} alt='logo' />
+            <Link href="/" className="inline-block mb-3">
+              <Image src={Logo?.src} height={25} width={180} alt='logo' className="h-6 w-auto" />
             </Link>
-            <p className="text-muted-foreground mb-4 max-w-md">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4 max-w-sm">
               {PERSONAL_INFO.bio}
             </p>
-            <div className="flex space-x-4">
+            
+            {/* Social Links */}
+            <div className="flex items-center gap-3">
               <motion.a
                 href={PERSONAL_INFO.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                className="w-9 h-9 bg-accent/80 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <i className="ri-github-fill"></i>
+                <i className="ri-github-fill text-lg"></i>
               </motion.a>
               <motion.a
                 href={PERSONAL_INFO.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                className="w-9 h-9 bg-accent/80 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <i className="ri-linkedin-fill"></i>
+                <i className="ri-linkedin-fill text-lg"></i>
               </motion.a>
               <motion.a
                 href={PERSONAL_INFO.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                className="w-9 h-9 bg-accent/80 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <i className="ri-twitter-fill"></i>
+                <i className="ri-twitter-fill text-lg"></i>
+              </motion.a>
+              <motion.a
+                href={`mailto:${PERSONAL_INFO.email}`}
+                className="w-9 h-9 bg-accent/80 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <i className="ri-mail-fill text-lg"></i>
               </motion.a>
             </div>
           </motion.div>
@@ -66,28 +87,41 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-sm uppercase tracking-wider mb-3">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="/skills" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Skills
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href} 
+                    className="text-muted-foreground text-sm hover:text-foreground hover:translate-x-1 transition-all duration-200 inline-block"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Projects */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            <h3 className="font-semibold text-sm uppercase tracking-wider mb-3">Projects</h3>
+            <ul className="space-y-2">
+              {PROJECTS.slice(0, 5).map((project) => (
+                <li key={project.id}>
+                  <a 
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground text-sm hover:text-foreground hover:translate-x-1 transition-all duration-200 inline-block"
+                  >
+                    {project.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -97,31 +131,49 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li className="text-muted-foreground">
-                <i className="ri-mail-line mr-2"></i>
-                {PERSONAL_INFO.email}
+            <h3 className="font-semibold text-sm uppercase tracking-wider mb-3">Contact</h3>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href={`mailto:${PERSONAL_INFO.email}`}
+                  className="text-muted-foreground text-sm hover:text-foreground transition-colors flex items-start gap-2"
+                >
+                  <i className="ri-mail-line mt-0.5 flex-shrink-0"></i>
+                  <span className="break-all">{PERSONAL_INFO.email}</span>
+                </a>
               </li>
-              <li className="text-muted-foreground">
-                <i className="ri-phone-line mr-2"></i>
-                {PERSONAL_INFO.phone}
+              <li>
+                <a 
+                  href={`tel:${PERSONAL_INFO.phone}`}
+                  className="text-muted-foreground text-sm hover:text-foreground transition-colors flex items-center gap-2"
+                >
+                  <i className="ri-phone-line flex-shrink-0"></i>
+                  <span>{PERSONAL_INFO.phone}</span>
+                </a>
               </li>
-              <li className="text-muted-foreground">
-                <i className="ri-map-pin-line mr-2"></i>
-                {PERSONAL_INFO.location}
+              <li className="text-muted-foreground text-sm flex items-start gap-2">
+                <i className="ri-map-pin-line mt-0.5 flex-shrink-0"></i>
+                <span>{PERSONAL_INFO.location}</span>
               </li>
             </ul>
           </motion.div>
         </div>
 
+        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="border-t border-border pt-8 mt-8 text-center text-muted-foreground"
+          className="border-t border-border pt-6 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
         >
-          <p>&copy; {currentYear} {PERSONAL_INFO.name}. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm">
+            &copy; {currentYear} {PERSONAL_INFO.name}. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1">
+              Made with <i className="ri-heart-fill text-red-500"></i> in India
+            </span>
+          </div>
         </motion.div>
       </div>
     </footer>

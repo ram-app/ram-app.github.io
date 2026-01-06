@@ -7,10 +7,10 @@ import { PERSONAL_INFO } from '@/lib/constants';
 
 export function QuickAbout() {
   const statsData = [
-    { value: "5+", label: "Years Experience", icon: "ri-time-line", color: "from-blue-500 to-purple-500" },
-    { value: "50+", label: "Projects Completed", icon: "ri-folder-line", color: "from-purple-500 to-pink-500" },
-    { value: "20+", label: "Technologies", icon: "ri-code-s-slash-line", color: "from-pink-500 to-red-500" },
-    { value: "100%", label: "Client Satisfaction", icon: "ri-heart-line", color: "from-red-500 to-orange-500" }
+    { value: "2+", label: "Years Experience", icon: "ri-time-line", color: "from-blue-500 to-purple-500" },
+    { value: "10+", label: "Projects Completed", icon: "ri-folder-line", color: "from-purple-500 to-pink-500" },
+    { value: "15+", label: "Technologies", icon: "ri-code-s-slash-line", color: "from-pink-500 to-red-500" },
+    { value: "20+", label: "Tools Mastered", icon: "ri-tools-line", color: "from-red-500 to-orange-500" }
   ];
 
   return (
@@ -66,8 +66,8 @@ export function QuickAbout() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              I'm a passionate full-stack developer with over 5 years of experience building scalable web applications. 
-              I specialize in React, Node.js, and modern web technologies, turning complex problems into elegant solutions.
+              I'm a passionate Frontend Developer with 2+ years of experience building responsive web and mobile applications. 
+              I specialize in React.js, Next.js, React Native, and modern frontend technologies, creating user-centric interfaces with scalable, high-performance solutions.
             </motion.p>
 
             <motion.p
@@ -169,7 +169,7 @@ export function QuickAbout() {
             Technologies I Work With
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'AWS', 'Docker'].map((tech, index) => (
+            {['React.js', 'Next.js', 'React Native', 'TypeScript', 'JavaScript', 'Node.js', 'Tailwind CSS', 'Docker'].map((tech, index) => (
               <motion.div
                 key={tech}
                 className="bg-background/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 text-sm font-medium hover:border-primary/50 transition-colors"

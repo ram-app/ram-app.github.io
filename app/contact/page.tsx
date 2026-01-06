@@ -39,7 +39,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 overflow-x-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -57,8 +57,8 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-8"
           >
@@ -151,8 +151,8 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="bg-background p-8 rounded-lg shadow-lg">

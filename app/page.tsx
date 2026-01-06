@@ -9,7 +9,7 @@ import { LoadingProvider } from '@/components/providers/LoadingProvider';
 export default function Home() {
   return (
     <LoadingProvider>
-      <div className="min-h-screen">
+      <div className="min-h-screen overflow-x-hidden">
         <HeroSection />
         <QuickAbout />
         <FeaturedProjects />
