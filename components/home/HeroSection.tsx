@@ -2,10 +2,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '../ui/Button';
 import { PERSONAL_INFO } from '@/lib/constants';
 import profileImage from "../../app/assets/photos/ram.jpeg"
+
+const MotionLink = motion(Link);
 
 export function HeroSection() {
   const [currentTitle, setCurrentTitle] = useState('');
@@ -88,6 +91,23 @@ export function HeroSection() {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
     }
+  };
+
+  const handleResumeDownload = () => {
+    // Google Drive file ID
+    const fileId = '1uK_fXMvLKgru9wPx3MowIMjd7ap0N7Ty';
+    
+    // Open resume in new tab (view mode)
+    window.open(`https://drive.google.com/file/d/${fileId}/view?usp=sharing`, '_blank');
+    
+    // Trigger download
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = 'Ram_Surat_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   if (!isMounted) {
@@ -224,7 +244,7 @@ export function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button href={PERSONAL_INFO.resume} variant="outline" size="lg" className="group">
+                <Button onClick={handleResumeDownload} variant="outline" size="lg" className="group">
                   <i className="ri-download-line mr-2 group-hover:animate-bounce"></i>
                   Download Resume
                 </Button>
@@ -241,7 +261,7 @@ export function HeroSection() {
                 { href: PERSONAL_INFO.social.linkedin, icon: 'ri-linkedin-fill', color: 'hover:bg-blue-600' },
                 { href: PERSONAL_INFO.social.twitter, icon: 'ri-twitter-fill', color: 'hover:bg-blue-400' },
               ].map((social, index) => (
-                <motion.a
+                <MotionLink
                   key={social.href}
                   href={social.href}
                   target="_blank"
@@ -254,7 +274,7 @@ export function HeroSection() {
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
                   <i className={`${social.icon} text-xl`}></i>
-                </motion.a>
+                </MotionLink>
               ))}
             </motion.div>
           </motion.div>

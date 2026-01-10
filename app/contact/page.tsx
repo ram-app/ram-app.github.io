@@ -1,9 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { PERSONAL_INFO } from '@/lib/constants';
+
+const MotionLink = motion(Link);
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -115,7 +118,7 @@ export default function Contact() {
             <div>
               <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
               <div className="flex space-x-4">
-                <motion.a
+                <MotionLink
                   href={PERSONAL_INFO.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -124,8 +127,8 @@ export default function Contact() {
                   whileTap={{ scale: 0.9 }}
                 >
                   <i className="ri-github-fill text-xl"></i>
-                </motion.a>
-                <motion.a
+                </MotionLink>
+                <MotionLink
                   href={PERSONAL_INFO.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -134,8 +137,8 @@ export default function Contact() {
                   whileTap={{ scale: 0.9 }}
                 >
                   <i className="ri-linkedin-fill text-xl"></i>
-                </motion.a>
-                <motion.a
+                </MotionLink>
+                <MotionLink
                   href={PERSONAL_INFO.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -144,7 +147,7 @@ export default function Contact() {
                   whileTap={{ scale: 0.9 }}
                 >
                   <i className="ri-twitter-fill text-xl"></i>
-                </motion.a>
+                </MotionLink>
               </div>
             </div>
           </motion.div>

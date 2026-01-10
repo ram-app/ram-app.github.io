@@ -4,8 +4,8 @@ export const PERSONAL_INFO = {
   email: "surajkumar2315@gmail.com",
   phone: "+91 9793814970",
   location: "Sabesar,Kachhawa,Mirzapur,U.P",
-  bio: "Frontend Developer with 2+ years of experience building responsive web and mobile applications using React.js, Next.js, and React Native. Proficient in creating user-centric interfaces, integrating APIs, and working with Redux, TypeScript, and Tailwind CSS. Focused on delivering scalable, accessible, and high-performance frontend solutions.",
-  resume: "/resume.pdf",
+  bio: "Frontend Developer with 2.5+ years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces. Familiar with TypeScript, Node.js, and Express.js, with the ability to collaborate effectively with backend teams. Passionate about clean code, reusable components, and delivering high-quality user experiences in fast-paced environments.",
+  resume: "https://drive.google.com/file/d/1uK_fXMvLKgru9wPx3MowIMjd7ap0N7Ty/view?usp=sharing",
   social: {
     github: "https://github.com/masaiff210880",
     linkedin: "https://www.linkedin.com/in/ram-surat-542877203/",
@@ -41,65 +41,51 @@ export const EXPERIENCE = [
   }
 ];
 
+// Project images
+import project1Image from '@/app/assets/projects/Screenshot 2026-01-10 233956.png';
+import project2Image from '@/app/assets/projects/Screenshot 2026-01-10 234024.png';
+import project3Image from '@/app/assets/projects/Screenshot 2026-01-10 234054.png';
+import project4Image from '@/app/assets/projects/Screenshot 2026-01-10 234130.png';
+
 export const PROJECTS = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment processing, inventory management, and admin dashboard.",
-    image: "https://readdy.ai/api/search-image?query=modern%20ecommerce%20platform%20interface%20with%20clean%20design%2C%20shopping%20cart%2C%20product%20grid%2C%20professional%20web%20application%20screenshot%20with%20purple%20and%20blue%20gradient%20colors%2C%20minimal%20UI%20design%2C%20high%20quality&width=600&height=400&seq=ecommerce-1&orientation=landscape",
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
-    github: "https://github.com/alexjohnson/ecommerce-platform",
-    live: "https://ecommerce-demo.vercel.app",
+    title: "HealthKart",
+    description: "Healthcare is an online platform to provide authentic health and nutritional supplements. Offers protein supplements, weight loss products, gym memberships, and personal trainers on one platform.",
+    image: project1Image.src,
+    technologies: ["React", "Redux", "Chakra UI", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/masaiff210880/defeated-interest-8343",
+    live: "https://frontend-vinaykumar7580.vercel.app/",
     featured: true
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates, team collaboration, and project tracking.",
-    image: "https://readdy.ai/api/search-image?query=modern%20task%20management%20dashboard%20interface%20with%20kanban%20board%2C%20clean%20design%2C%20productivity%20app%20screenshot%20with%20organized%20layout%2C%20purple%20and%20blue%20color%20scheme%2C%20professional%20UI%20design&width=600&height=400&seq=taskapp-1&orientation=landscape",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
-    github: "https://github.com/alexjohnson/task-manager",
-    live: "https://taskmanager-demo.vercel.app",
+    title: "MedZ+",
+    description: "MedZ+ brings to you an online platform, which can be accessed for all your health needs. Get your ayurvedic, homeopathic, vitamins & nutrition supplements health-related products delivered at home.",
+    image: project2Image.src,
+    technologies: ["React", "Redux", "Chakra UI", "JavaScript", "CSS"],
+    github: "https://github.com/masaiff210880/-quick-jelly-9961",
+    live: "https://medzplus.vercel.app/",
     featured: true
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "Beautiful weather application with location-based forecasts, interactive charts, and responsive design.",
-    image: "https://readdy.ai/api/search-image?query=modern%20weather%20dashboard%20interface%20with%20beautiful%20weather%20icons%2C%20charts%2C%20clean%20design%2C%20weather%20app%20screenshot%20with%20gradient%20backgrounds%2C%20professional%20UI%20design%2C%20blue%20and%20purple%20colors&width=600&height=400&seq=weather-1&orientation=landscape",
-    technologies: ["React", "TypeScript", "OpenWeather API", "Chart.js"],
-    github: "https://github.com/alexjohnson/weather-dashboard",
-    live: "https://weather-dashboard-demo.vercel.app",
+    title: "Yaatra",
+    description: "Yaatra.com is a leading online travel Web site where travelers can make airline, hotel, and car rental reservations.",
+    image: project3Image.src,
+    technologies: ["JavaScript", "HTML5", "CSS3", "Netlify"],
+    github: "https://github.com/masaiff210880/flaky-suggestion-4282",
+    live: "https://joyful-begonia-5f548b.netlify.app/fw22_0277home.html",
     featured: false
   },
   {
     id: 4,
-    title: "Portfolio Website",
-    description: "Personal portfolio website built with Next.js, featuring dark mode, animations, and responsive design.",
-    image: "https://readdy.ai/api/search-image?query=modern%20portfolio%20website%20interface%20with%20clean%20design%2C%20developer%20portfolio%20layout%2C%20professional%20web%20design%20with%20gradient%20colors%2C%20minimalist%20UI%2C%20purple%20and%20blue%20theme&width=600&height=400&seq=portfolio-1&orientation=landscape",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-    github: "https://github.com/alexjohnson/portfolio",
-    live: "https://alexjohnson.dev",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Chat Application",
-    description: "Real-time chat application with message encryption, file sharing, and group chat functionality.",
-    image: "https://readdy.ai/api/search-image?query=modern%20chat%20application%20interface%20with%20message%20bubbles%2C%20clean%20design%2C%20messaging%20app%20screenshot%20with%20organized%20layout%2C%20purple%20and%20blue%20color%20scheme%2C%20professional%20UI%20design&width=600&height=400&seq=chat-1&orientation=landscape",
-    technologies: ["React", "Socket.io", "Node.js", "MongoDB", "JWT"],
-    github: "https://github.com/alexjohnson/chat-app",
-    live: "https://chat-demo.vercel.app",
-    featured: false
-  },
-  {
-    id: 6,
-    title: "Blog Platform",
-    description: "Content management system with markdown support, user authentication, and admin panel.",
-    image: "https://readdy.ai/api/search-image?query=modern%20blog%20platform%20interface%20with%20clean%20design%2C%20content%20management%20system%20layout%2C%20professional%20web%20application%20screenshot%20with%20typography%20focus%2C%20purple%20and%20blue%20gradient%20colors&width=600&height=400&seq=blog-1&orientation=landscape",
-    technologies: ["Next.js", "Prisma", "PostgreSQL", "NextAuth.js"],
-    github: "https://github.com/alexjohnson/blog-platform",
-    live: "https://blog-demo.vercel.app",
+    title: "Glamour Beauty",
+    description: "Glamour Beauty one of the most popular online E-commerce platform that sells the cosmetics products. It has a lot of brands and different products.",
+    image: project4Image.src,
+    technologies: ["React", "Vite", "Netlify", "CSS3"],
+    github: "https://github.com/masaiff210880/posh-title-8378/tree/main/GLAMOUR_BEAUTY/glamourbeauty-app",
+    live: "https://glamourbeauty-app.vercel.app/",
     featured: false
   }
 ];

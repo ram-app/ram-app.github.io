@@ -1,7 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { ReactNode } from 'react';
+
+const MotionLink = motion(Link);
 
 interface ButtonProps {
   children: ReactNode;
@@ -42,7 +45,7 @@ export function Button({
 
   if (href) {
     return (
-      <motion.a
+      <MotionLink
         href={href}
         className={classes}
         whileHover={{ scale: 1.05 }}
@@ -51,7 +54,7 @@ export function Button({
         rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       >
         {children}
-      </motion.a>
+      </MotionLink>
     );
   }
 

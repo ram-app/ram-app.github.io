@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { PERSONAL_INFO, PROJECTS } from '@/lib/constants';
 import Image from 'next/image';
-import Logo from "../../app/assets/photos/CREATE_LOGO_WITH_THIS_NAME_Ram_Surat-removebg-preview.png"
+import Logo from "../../app/assets/photos/CREATE LOGO WITH THIS NAME Ram Surat.jpg"
+
+const MotionLink = motion(Link);
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -32,7 +34,9 @@ export function Footer() {
             className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2"
           >
             <Link href="/" className="inline-block mb-3">
-              <Image src={Logo?.src} height={25} width={180} alt='logo' className="h-6 w-auto" />
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 px-4 py-3 rounded-xl shadow-sm border border-gray-200/50 dark:border-slate-600/50 inline-block">
+                <Image src={Logo?.src} height={50} width={200} alt='logo' className="h-12 w-auto object-contain" />
+              </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4 max-w-sm">
               {PERSONAL_INFO.bio}
@@ -40,7 +44,7 @@ export function Footer() {
             
             {/* Social Links */}
             <div className="flex items-center gap-3">
-              <motion.a
+              <MotionLink
                 href={PERSONAL_INFO.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -49,8 +53,8 @@ export function Footer() {
                 whileTap={{ scale: 0.95 }}
               >
                 <i className="ri-github-fill text-lg"></i>
-              </motion.a>
-              <motion.a
+              </MotionLink>
+              <MotionLink
                 href={PERSONAL_INFO.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -59,8 +63,8 @@ export function Footer() {
                 whileTap={{ scale: 0.95 }}
               >
                 <i className="ri-linkedin-fill text-lg"></i>
-              </motion.a>
-              <motion.a
+              </MotionLink>
+              <MotionLink
                 href={PERSONAL_INFO.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -69,15 +73,15 @@ export function Footer() {
                 whileTap={{ scale: 0.95 }}
               >
                 <i className="ri-twitter-fill text-lg"></i>
-              </motion.a>
-              <motion.a
+              </MotionLink>
+              <MotionLink
                 href={`mailto:${PERSONAL_INFO.email}`}
                 className="w-9 h-9 bg-accent/80 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <i className="ri-mail-fill text-lg"></i>
-              </motion.a>
+              </MotionLink>
             </div>
           </motion.div>
 
@@ -112,14 +116,14 @@ export function Footer() {
             <ul className="space-y-2">
               {PROJECTS.slice(0, 5).map((project) => (
                 <li key={project.id}>
-                  <a 
+                  <Link 
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground text-sm hover:text-foreground hover:translate-x-1 transition-all duration-200 inline-block"
                   >
                     {project.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -134,22 +138,22 @@ export function Footer() {
             <h3 className="font-semibold text-sm uppercase tracking-wider mb-3">Contact</h3>
             <ul className="space-y-3">
               <li>
-                <a 
+                <Link 
                   href={`mailto:${PERSONAL_INFO.email}`}
                   className="text-muted-foreground text-sm hover:text-foreground transition-colors flex items-start gap-2"
                 >
                   <i className="ri-mail-line mt-0.5 flex-shrink-0"></i>
                   <span className="break-all">{PERSONAL_INFO.email}</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
+                <Link 
                   href={`tel:${PERSONAL_INFO.phone}`}
                   className="text-muted-foreground text-sm hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <i className="ri-phone-line flex-shrink-0"></i>
                   <span>{PERSONAL_INFO.phone}</span>
-                </a>
+                </Link>
               </li>
               <li className="text-muted-foreground text-sm flex items-start gap-2">
                 <i className="ri-map-pin-line mt-0.5 flex-shrink-0"></i>

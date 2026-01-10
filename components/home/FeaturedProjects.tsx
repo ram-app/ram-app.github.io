@@ -2,8 +2,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Button } from '../ui/Button';
 import { PROJECTS } from '@/lib/constants';
+
+const MotionLink = motion(Link);
 
 export function FeaturedProjects() {
   const featuredProjects = PROJECTS.filter(project => project.featured);
@@ -72,7 +75,7 @@ export function FeaturedProjects() {
                 
                 {/* Action Buttons */}
                 <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <motion.a
+                  <MotionLink
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -81,8 +84,8 @@ export function FeaturedProjects() {
                     whileTap={{ scale: 0.9 }}
                   >
                     <i className="ri-github-line"></i>
-                  </motion.a>
-                  <motion.a
+                  </MotionLink>
+                  <MotionLink
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -91,7 +94,7 @@ export function FeaturedProjects() {
                     whileTap={{ scale: 0.9 }}
                   >
                     <i className="ri-external-link-line"></i>
-                  </motion.a>
+                  </MotionLink>
                 </div>
               </div>
 
@@ -127,7 +130,7 @@ export function FeaturedProjects() {
 
                 {/* Links */}
                 <div className="flex gap-3">
-                  <motion.a
+                  <MotionLink
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -136,8 +139,8 @@ export function FeaturedProjects() {
                   >
                     <i className="ri-github-line"></i>
                     View Code
-                  </motion.a>
-                  <motion.a
+                  </MotionLink>
+                  <MotionLink
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -146,7 +149,7 @@ export function FeaturedProjects() {
                   >
                     <i className="ri-external-link-line"></i>
                     Live Demo
-                  </motion.a>
+                  </MotionLink>
                 </div>
               </div>
             </motion.div>

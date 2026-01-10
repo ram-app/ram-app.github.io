@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import Image from 'next/image';
-import Logo from "../../app/assets/photos/CREATE_LOGO_WITH_THIS_NAME_Ram_Surat-removebg-preview.png"
+import Logo from "../../app/assets/photos/CREATE LOGO WITH THIS NAME Ram Surat.jpg"
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -33,12 +33,12 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <motion.div
-              whileHover={{ scale: 1.1 }}
-              className="flex items-center justify-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 px-3 py-2 rounded-xl shadow-sm border border-gray-200/50 dark:border-slate-600/50"
             >
-             <Image src={Logo?.src} height={50} width={300} alt='logo' />
+              <Image src={Logo?.src} height={40} width={160} alt='logo' className="h-8 w-auto object-contain" />
             </motion.div>
-          
           </Link>
 
           {/* Desktop Navigation */}
