@@ -109,8 +109,8 @@ export const metadata: Metadata = {
   creator: "Ram Surat",
   publisher: "Ram Surat",
   icons: {
-    icon: '/favicon.jpg',
-    apple: '/apple-touch-icon.png',
+    icon: '/ram.png',
+    apple: '/ram.png',
   },
   openGraph: {
     type: "website",
@@ -121,11 +121,11 @@ export const metadata: Metadata = {
     siteName: "Ram Surat - Frontend Developer Portfolio",
     images: [
       {
-        url: "https://ram-surat.dev/og-image.jpg",
+        url: "https://ram-surat.dev/ram.png",
         width: 1200,
         height: 630,
         alt: "Ram Surat - Frontend Developer with 2.5+ Years Experience",
-        type: "image/jpeg",
+        type: "image/png",
       }
     ],
   },
@@ -136,7 +136,7 @@ export const metadata: Metadata = {
     creator: "@ramsurat",
     site: "@ramsurat",
     images: {
-      url: "https://ram-surat.dev/og-image.jpg",
+      url: "https://ram-surat.dev/ram.png",
       alt: "Ram Surat - Frontend Developer",
     },
   },
@@ -170,8 +170,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" href="/ram.png" />
+        <link rel="apple-touch-icon" href="/ram.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#667eea" />
         <script

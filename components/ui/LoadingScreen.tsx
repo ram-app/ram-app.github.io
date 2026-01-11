@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Code, Star, Heart, Zap, Sparkles, Terminal, Coffee } from 'lucide-react';
 import Image from 'next/image';
-import profileImg from "../../app/assets/photos/WhatsApp_Image_2024-08-29_at_19.56.11_89bd653d-removebg-preview.png"
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -142,21 +141,13 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
             // transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
           >
             <div className="w-full h-full rounded-full border-4 border-gradient-to-r from-blue-500 to-purple-600 relative overflow-hidden">
-              <div className="absolute inset-2 rounded-full  flex items-center justify-center">
-                {/* <motion.div
-                  animate={{
-                    scale: [1, 1.3, 1],
-                    rotate: [0, 180, 360],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
-                >
-                  <Code className="text-white w-8 h-8" />
-                </motion.div> */}
-                <Image src={profileImg?.src} height={100} width={100} alt='logo' />
+              <div className="absolute inset-0 rounded-full overflow-hidden">
+                <Image 
+                  src="/ram.png" 
+                  fill
+                  alt='logo' 
+                  className="object-cover"
+                />
               </div>
               
               {/* Glowing effect */}

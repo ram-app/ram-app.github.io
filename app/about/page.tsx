@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { PERSONAL_INFO, EXPERIENCE } from '@/lib/constants';
-import profileImage from "../assets/photos/ram.jpeg";
 
 export default function About() {
   return (
@@ -31,7 +30,7 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src={profileImage?.src}
+                src="/ram.png"
                 alt="Ram Surat"
                 className="w-full h-auto rounded-2xl"
               />

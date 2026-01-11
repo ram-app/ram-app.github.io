@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '../ui/Button';
 import { PERSONAL_INFO } from '@/lib/constants';
-import profileImage from "../../app/assets/photos/ram.jpeg"
 
 const MotionLink = motion(Link);
 
@@ -301,7 +300,7 @@ export function HeroSection() {
               >
                 <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
                   <img
-                    src={profileImage?.src}
+                    src="/ram.png"
                     alt={PERSONAL_INFO.name}
                     className="w-[200%] h-[100%] object-cover object-[center_15%]"
                   />
