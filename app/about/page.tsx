@@ -30,7 +30,7 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/ram.png"
+                src="/ram-new.jpeg"
                 alt="Ram Surat"
                 className="w-full h-auto rounded-2xl"
               />

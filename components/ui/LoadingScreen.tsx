@@ -136,17 +136,17 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
           className="mb-8"
         >
           <motion.div
-            className="w-32 h-32 mx-auto mb-6 relative"
+            className="w-40 h-40 mx-auto mb-6 relative"
             // animate={{ rotate: 360 }}
             // transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
           >
             <div className="w-full h-full rounded-full border-4 border-gradient-to-r from-blue-500 to-purple-600 relative overflow-hidden">
               <div className="absolute inset-0 rounded-full overflow-hidden">
                 <Image 
-                  src="/ram.png" 
+                  src="/ram-new.jpeg" 
                   fill
                   alt='logo' 
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               

@@ -300,7 +300,7 @@ export function HeroSection() {
               >
                 <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
                   <img
-                    src="/ram.png"
+                    src="/ram-new.jpeg"
                     alt={PERSONAL_INFO.name}
                     className="w-[200%] h-[100%] object-cover object-[center_15%]"
                   />
