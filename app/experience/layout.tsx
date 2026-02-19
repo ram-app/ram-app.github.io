@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "Team Lead Frontend",
     "Enterprise Application Developer",
     "Professional Frontend Developer",
-    "2.5 Years Experience React",
+    "3 Years Experience React",
     "Full Stack Developer Experience"
   ],
   openGraph: {
     title: "Professional Experience | Ram Surat - Frontend Developer",
-    description: "2.5+ years of frontend development experience at Phantasm Solutions. Building enterprise ERP systems, e-commerce platforms, and mobile applications.",
+    description: "3 years of frontend development experience at Phantasm Solutions. Building enterprise ERP systems, e-commerce platforms, and mobile applications.",
     url: "https://ram-surat.dev/experience",
   },
 };

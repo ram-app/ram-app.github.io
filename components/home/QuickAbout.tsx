@@ -7,7 +7,7 @@ import { PERSONAL_INFO } from '@/lib/constants';
 
 export function QuickAbout() {
   const statsData = [
-    { value: "2.5+", label: "Years Experience", icon: "ri-time-line", color: "from-blue-500 to-purple-500" },
+    { value: "3+", label: "Years Experience", icon: "ri-time-line", color: "from-blue-500 to-purple-500" },
     { value: "10+", label: "Projects Completed", icon: "ri-folder-line", color: "from-purple-500 to-pink-500" },
     { value: "15+", label: "Technologies", icon: "ri-code-s-slash-line", color: "from-pink-500 to-red-500" },
     { value: "20+", label: "Tools Mastered", icon: "ri-tools-line", color: "from-red-500 to-orange-500" }
@@ -66,7 +66,7 @@ export function QuickAbout() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              I'm a passionate Frontend Developer with 2.5+ years of experience building responsive web and mobile applications. 
+              I'm a passionate Frontend Developer with 3 years of experience building responsive web and mobile applications. 
               I specialize in React.js, Next.js, React Native, and modern frontend technologies, creating user-centric interfaces with scalable, high-performance solutions.
             </motion.p>
 

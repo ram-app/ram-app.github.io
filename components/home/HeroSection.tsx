@@ -93,14 +93,13 @@ export function HeroSection() {
   };
 
   const handleResumeDownload = () => {
-    // Google Drive file ID
-    const fileId = '1uK_fXMvLKgru9wPx3MowIMjd7ap0N7Ty';
-    
+    const viewUrl = 'https://drive.google.com/file/d/1Aq2Od_m9EhaHS-frJYgDaciQazVD9rzt/view?usp=sharing';
+    const downloadUrl = 'https://drive.google.com/uc?export=download&id=1Aq2Od_m9EhaHS-frJYgDaciQazVD9rzt';
+
     // Open resume in new tab (view mode)
-    window.open(`https://drive.google.com/file/d/${fileId}/view?usp=sharing`, '_blank');
+    window.open(viewUrl, '_blank');
     
     // Trigger download
-    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
     const link = document.createElement('a');
     link.href = downloadUrl;
     link.download = 'Ram_Surat_Resume.pdf';
@@ -253,12 +252,12 @@ export function HeroSection() {
             {/* Social Links */}
             <motion.div
               variants={itemVariants}
-              className="flex justify-center lg:justify-start space-x-4"
+              className="flex justify-center lg:justify-start space-x-4 pb-6"
             >
               {[
                 { href: PERSONAL_INFO.social.github, icon: 'ri-github-fill', color: 'hover:bg-gray-800' },
                 { href: PERSONAL_INFO.social.linkedin, icon: 'ri-linkedin-fill', color: 'hover:bg-blue-600' },
-                { href: PERSONAL_INFO.social.twitter, icon: 'ri-twitter-fill', color: 'hover:bg-blue-400' },
+                { href: PERSONAL_INFO.social.website, icon: 'ri-global-line', color: 'hover:bg-green-500' },
               ].map((social, index) => (
                 <MotionLink
                   key={social.href}
@@ -288,7 +287,7 @@ export function HeroSection() {
             <div className="relative">
               {/* Main Profile Image */}
               <motion.div
-                className="relative w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-600 p-1 shadow-2xl"
+                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[26rem] lg:h-[26rem] rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-600 p-1 shadow-2xl"
                 // animate={{
                 //   rotate: [0, 360],
                 // }}

@@ -17,23 +17,82 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required.';
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name should be at least 2 characters.';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required.';
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email.trim())) {
+        newErrors.email = 'Please enter a valid email address.';
+      }
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required.';
+    } else if (formData.subject.trim().length < 4) {
+      newErrors.subject = 'Subject should be at least 4 characters.';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required.';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message should be at least 10 characters.';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    if (errors[e.target.name]) {
+      setErrors((prev) => {
+        const updated = { ...prev };
+        delete updated[e.target.name];
+        return updated;
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) {
+      return;
+    }
+
     setIsSubmitting(true);
-    
+    setSubmitStatus('idle');
+
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to send message');
+      }
+
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
+      setErrors({});
     } catch (error) {
       setSubmitStatus('error');
     } finally {
@@ -117,7 +176,7 @@ export default function Contact() {
 
             <div>
               <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 pb-4">
                 <MotionLink
                   href={PERSONAL_INFO.social.github}
                   target="_blank"
@@ -139,14 +198,14 @@ export default function Contact() {
                   <i className="ri-linkedin-fill text-xl"></i>
                 </MotionLink>
                 <MotionLink
-                  href={PERSONAL_INFO.social.twitter}
+                  href={PERSONAL_INFO.social.website}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <i className="ri-twitter-fill text-xl"></i>
+                  <i className="ri-global-line text-xl"></i>
                 </MotionLink>
               </div>
             </div>
@@ -177,6 +236,9 @@ export default function Contact() {
                       className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-sm"
                       placeholder="Your name"
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-xs text-red-500">{errors.name}</p>
+                    )}
                   </div>
                   
                   <div>
@@ -193,6 +255,9 @@ export default function Contact() {
                       className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-sm"
                       placeholder="your@email.com"
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-xs text-red-500">{errors.email}</p>
+                    )}
                   </div>
                 </div>
 
@@ -210,6 +275,9 @@ export default function Contact() {
                     className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-sm"
                     placeholder="What's this about?"
                   />
+                    {errors.subject && (
+                      <p className="mt-1 text-xs text-red-500">{errors.subject}</p>
+                    )}
                 </div>
 
                 <div>
@@ -230,6 +298,9 @@ export default function Contact() {
                   <div className="text-right text-sm text-muted-foreground mt-1">
                     {formData.message.length}/500
                   </div>
+                  {errors.message && (
+                    <p className="mt-1 text-xs text-red-500 text-left">{errors.message}</p>
+                  )}
                 </div>
 
                 <Button

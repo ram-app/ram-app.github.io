@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { PERSONAL_INFO, PROJECTS } from '@/lib/constants';
 import Image from 'next/image';
-import Logo from "../../app/assets/photos/CREATE LOGO WITH THIS NAME Ram Surat.jpg"
 
 const MotionLink = motion(Link);
 
@@ -34,16 +33,16 @@ export function Footer() {
             className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2"
           >
             <Link href="/" className="inline-block mb-3">
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 px-4 py-3 rounded-xl shadow-sm border border-gray-200/50 dark:border-slate-600/50 inline-block">
-                <Image src={Logo?.src} height={50} width={200} alt='logo' className="h-12 w-auto object-contain" />
-              </div>
+              <span className="text-2xl font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+                Ram Surat
+              </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4 max-w-sm">
               {PERSONAL_INFO.bio}
             </p>
             
             {/* Social Links */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 pb-4">
               <MotionLink
                 href={PERSONAL_INFO.social.github}
                 target="_blank"
@@ -65,14 +64,14 @@ export function Footer() {
                 <i className="ri-linkedin-fill text-lg"></i>
               </MotionLink>
               <MotionLink
-                href={PERSONAL_INFO.social.twitter}
+                href={PERSONAL_INFO.social.website}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-accent/80 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <i className="ri-twitter-fill text-lg"></i>
+                <i className="ri-global-line text-lg"></i>
               </MotionLink>
               <MotionLink
                 href={`mailto:${PERSONAL_INFO.email}`}

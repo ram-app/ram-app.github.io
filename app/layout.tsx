@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     default: "Ram Surat | Frontend Developer | React.js & Next.js Expert | Hire Frontend Developer India",
     template: "%s | Ram Surat - Frontend Developer"
   },
-  description: "Ram Surat - Frontend Developer with 2.5+ years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces. Familiar with TypeScript, Node.js, and Express.js, with the ability to collaborate effectively with backend teams. Passionate about clean code, reusable components, and delivering high-quality user experiences in fast-paced environments.",
+  description: "Ram Surat - Frontend Developer with 3 years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces. Familiar with TypeScript, Node.js, and Express.js, with the ability to collaborate effectively with backend teams. Passionate about clean code, reusable components, and delivering high-quality user experiences in fast-paced environments.",
   keywords: [
     // Primary Keywords
     "Frontend Developer",
@@ -116,23 +116,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://ram-surat.dev",
-    title: "Ram Surat | Frontend Developer | 2.5+ Years Experience | React.js & Next.js Expert",
-    description: "Frontend Developer with 2.5+ years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS. Experienced in coupon & discount logic, checkout flows, authentication, and performance-optimized interfaces. Passionate about clean code and high-quality user experiences.",
+    title: "Ram Surat | Frontend Developer | 3 Years Experience | React.js & Next.js Expert",
+    description: "Frontend Developer with 3 years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS. Experienced in coupon & discount logic, checkout flows, authentication, and performance-optimized interfaces. Passionate about clean code and high-quality user experiences.",
     siteName: "Ram Surat - Frontend Developer Portfolio",
     images: [
       {
         url: "https://ram-surat.dev/ram-new.jpeg",
         width: 1200,
         height: 630,
-        alt: "Ram Surat - Frontend Developer with 2.5+ Years Experience",
+        alt: "Ram Surat - Frontend Developer with 3 Years Experience",
         type: "image/jpeg",
       }
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ram Surat | Frontend Developer | 2.5+ Years Experience",
-    description: "Frontend Developer with 2.5+ years of hands-on experience. Proficient in React.js, Next.js, JavaScript. Experienced in complex features like checkout flows, authentication, and performance-optimized interfaces. Passionate about clean code and high-quality UX.",
+    title: "Ram Surat | Frontend Developer | 3 Years Experience",
+    description: "Frontend Developer with 3 years of hands-on experience. Proficient in React.js, Next.js, JavaScript. Experienced in complex features like checkout flows, authentication, and performance-optimized interfaces. Passionate about clean code and high-quality UX.",
     creator: "@ramsurat",
     site: "@ramsurat",
     images: {
@@ -187,7 +187,7 @@ export default function RootLayout({
                   givenName: "Ram",
                   familyName: "Surat",
                   jobTitle: "Frontend Developer",
-                  description: "Frontend Developer with 2.5+ years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces.",
+                  description: "Frontend Developer with 3 years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces.",
                   url: "https://ram-surat.dev",
                   email: "surajkumar2315@gmail.com",
                   telephone: "+91 9793814970",

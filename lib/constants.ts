@@ -1,16 +1,16 @@
 export const PERSONAL_INFO = {
   name: "Ram Surat",
   title: "Full Stack Developer",
-  email: "surajkumar2315@gmail.com",
+  email: "ram.surat.web@gmail.com",
   phone: "+91 9793814970",
   location: "Sabesar,Kachhawa,Mirzapur,U.P",
-  bio: "Frontend Developer with 2.5+ years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces. Familiar with TypeScript, Node.js, and Express.js, with the ability to collaborate effectively with backend teams. Passionate about clean code, reusable components, and delivering high-quality user experiences in fast-paced environments.",
-  resume: "https://drive.google.com/file/d/1uK_fXMvLKgru9wPx3MowIMjd7ap0N7Ty/view?usp=sharing",
+  bio: "Frontend Developer with 3 years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces. Familiar with TypeScript, Node.js, and Express.js, with the ability to collaborate effectively with backend teams. Passionate about clean code, reusable components, and delivering high-quality user experiences in fast-paced environments.",
+  resume: "https://drive.google.com/file/d/1Aq2Od_m9EhaHS-frJYgDaciQazVD9rzt/view?usp=sharing",
   social: {
     github: "https://github.com/masaiff210880",
-    linkedin: "https://www.linkedin.com/in/ram-surat-542877203/",
-    twitter: "https://twitter.com/alexjohnson",
-    website: "https://alexjohnson.dev"
+    linkedin: "https://www.linkedin.com/in/ram-surat-frontend-developer/",
+    twitter: "https://twitter.com/ramsurat",
+    website: "https://ram-app.github.io/"
   }
 };
 
@@ -48,6 +48,26 @@ import project3Image from '@/app/assets/projects/Screenshot 2026-01-10 234054.pn
 import project4Image from '@/app/assets/projects/Screenshot 2026-01-10 234130.png';
 
 export const PROJECTS = [
+  {
+    id: 5,
+    title: "LMS Learning Management System - User Portal",
+    description: "A modern Learning Management System user interface for Sabeel TV where students can browse, enroll, and learn from structured Islamic courses with responsive UI and secure integrations.",
+    image: "/user.png",
+    technologies: ["Next.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL"],
+    github: "https://github.com/articulationpoint/sabeel_learning_frontend",
+    live: "https://sabeeltv.com/",
+    featured: true
+  },
+  {
+    id: 6,
+    title: "LMS Learning Management System - Admin Portal",
+    description: "Admin dashboard for managing courses, users, and content for the Sabeel TV platform, with analytics and management tools for instructors and admins.",
+    image: "/admin.png",
+    technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL"],
+    github: "https://github.com/articulationpoint/sabeel_learning_admin",
+    live: "https://admin.sabeeltv.com/dashboard",
+    featured: true
+  },
   {
     id: 1,
     title: "HealthKart",

@@ -211,7 +211,7 @@ export default function ExperiencePage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { number: "2.5+", label: "Years Experience", icon: Calendar },
+              { number: "3+", label: "Years Experience", icon: Calendar },
               { number: "10+", label: "Projects Completed", icon: Briefcase },
               { number: "10+", label: "Technologies Mastered", icon: Code }
             ].map((stat, index) => (
