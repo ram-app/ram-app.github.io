@@ -2,10 +2,18 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Projects | Ram Surat | React.js & Next.js Portfolio | Web Development Projects",
-  description: "Explore Ram Surat's portfolio of web development projects including HealthKart clone, MedZ+ healthcare platform, Yaatra travel booking, and Glamour Beauty e-commerce. Built with React.js, Next.js, Redux, Node.js, MongoDB.",
+  description: "Explore Ram Surat's portfolio: React Native mobile apps (LMS with Zoom & streaming, NoteTracker workflow), Firebase e-commerce (American Distributors, Smokevana, Green Street Distro), plus React/Next.js web projects, MERN builds, and more.",
   keywords: [
+    "React Native Projects",
+    "Firebase Mobile Apps",
+    "LMS Mobile App",
+    "E-commerce React Native",
+    "Zoom SDK",
+    "Razorpay Integration",
+    "American Distributors App",
+    "Smokevana",
+    "Green Street Distro",
     "React.js Projects",
-    "Next.js Projects",
     "Frontend Development Projects",
     "Web Development Portfolio",
     "E-commerce Website Projects",
@@ -22,8 +30,8 @@ export const metadata: Metadata = {
     "Glamour Beauty E-commerce"
   ],
   openGraph: {
-    title: "Web Development Projects | Ram Surat - Frontend Developer",
-    description: "Browse through professional web development projects built with React.js, Next.js, Node.js, MongoDB. E-commerce, Healthcare, Travel booking applications.",
+    title: "Projects | Ram Surat | Web & Mobile Portfolio",
+    description: "React Native mobile apps, Firebase e-commerce, and React/Next.js web projects—LMS, workflow tooling, and full-stack applications.",
     url: "https://ram-surat.dev/projects",
   },
 };

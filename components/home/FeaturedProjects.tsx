@@ -62,54 +62,73 @@ export function FeaturedProjects() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Project Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-slate-100 via-secondary/30 to-slate-200 dark:from-slate-900 dark:via-secondary/20 dark:to-slate-800 flex items-center justify-center px-6 py-4">
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  whileHover={{ scale: 1.1 }}
+                  className="max-h-full w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]"
+                  whileHover={{ scale: 1.03 }}
                 />
-                
+
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Action Buttons */}
-                <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <MotionLink
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <i className="ri-github-line"></i>
-                  </MotionLink>
-                  <MotionLink
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <i className="ri-external-link-line"></i>
-                  </MotionLink>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+                {/* Action Buttons — only when public URLs exist */}
+                {(project.github || project.live) && (
+                  <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {project.github && (
+                      <MotionLink
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <i className="ri-github-line"></i>
+                      </MotionLink>
+                    )}
+                    {project.live && (
+                      <MotionLink
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <i className="ri-external-link-line"></i>
+                      </MotionLink>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Project Info */}
               <div className="p-6">
+                {project.period && (
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">
+                    {project.period}
+                  </p>
+                )}
                 <motion.h3
                   className="text-xl font-bold mb-3 group-hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   {project.title}
                 </motion.h3>
-                
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+
+                <p className="text-muted-foreground mb-3 leading-relaxed">
                   {project.description}
                 </p>
+
+                {project.highlights && project.highlights.length > 0 && (
+                  <ul className="text-xs sm:text-sm text-muted-foreground space-y-1 mb-4 list-disc pl-4 leading-snug">
+                    {project.highlights.map((item, hi) => (
+                      <li key={hi}>{item}</li>
+                    ))}
+                  </ul>
+                )}
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -129,27 +148,41 @@ export function FeaturedProjects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-3">
-                  <MotionLink
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                    whileHover={{ x: 3 }}
-                  >
-                    <i className="ri-github-line"></i>
-                    View Code
-                  </MotionLink>
-                  <MotionLink
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                    whileHover={{ x: 3 }}
-                  >
-                    <i className="ri-external-link-line"></i>
-                    Live Demo
-                  </MotionLink>
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  {project.github ? (
+                    <MotionLink
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      whileHover={{ x: 3 }}
+                    >
+                      <i className="ri-github-line"></i>
+                      View Code
+                    </MotionLink>
+                  ) : (
+                    <span className="flex items-center gap-2 text-sm text-muted-foreground/70">
+                      <i className="ri-git-repository-private-line"></i>
+                      Code private
+                    </span>
+                  )}
+                  {project.live ? (
+                    <MotionLink
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      whileHover={{ x: 3 }}
+                    >
+                      <i className="ri-external-link-line"></i>
+                      Live Demo
+                    </MotionLink>
+                  ) : (
+                    <span className="flex items-center gap-2 text-sm text-muted-foreground/70">
+                      <i className="ri-lock-line"></i>
+                      No public demo
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>

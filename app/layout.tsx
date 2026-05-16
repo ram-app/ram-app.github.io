@@ -1,10 +1,10 @@
-
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono, Pacifico } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { OG_IMAGE_PATH, ogImageAbsoluteUrl, siteUrl } from "@/lib/site-config";
 
 const pacifico = Pacifico({
   weight: '400',
@@ -27,13 +27,22 @@ const robotoMono = Roboto_Mono({
   display: "swap",
 });
 
+const ogDescription =
+  "Frontend Developer with 3 years of hands-on frontend experience across web and mobile. Phantasm Solutions Pvt Ltd: leading 5+ frontend teams on ERP, e-commerce, and React Native apps. Proficient in React.js, Next.js, JavaScript, Firebase, and performance-focused UI.";
+
+/** Local file: public/Gemini_Generated_Image_ghxrhkghxrhkghxr.png → live: https://ram-surat.dev/… (via siteUrl + OG_IMAGE_PATH) */
+const ogShareImage = ogImageAbsoluteUrl;
+const ogImageWidth = 1200;
+const ogImageHeight = 630;
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ram-surat.dev'),
+  // Site origin only. Open Graph `images[].url` uses OG_IMAGE_PATH; Next joins this + path → full image URL.
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Ram Surat | Frontend Developer | React.js & Next.js Expert | Hire Frontend Developer India",
+    default: "Ram Surat | Frontend Developer | Web & Mobile | React.js & Next.js Expert | Hire Frontend Developer India",
     template: "%s | Ram Surat - Frontend Developer"
   },
-  description: "Ram Surat - Frontend Developer with 3 years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces. Familiar with TypeScript, Node.js, and Express.js, with the ability to collaborate effectively with backend teams. Passionate about clean code, reusable components, and delivering high-quality user experiences in fast-paced environments.",
+  description: `Ram Surat — ${ogDescription} Skilled in HTML, CSS, TypeScript, Node.js, and Express. Product experience includes coupons, checkout, authentication, and performance-focused interfaces, with clean reusable UI and close backend collaboration.`,
   keywords: [
     // Primary Keywords
     "Frontend Developer",
@@ -103,9 +112,13 @@ export const metadata: Metadata = {
     "Ram Surat Developer",
     "Ram Surat Portfolio",
     "Ram Surat Frontend Developer",
-    "Ram Surat React Developer"
+    "Ram Surat React Developer",
+    "Phantasm Solutions",
+    "3 Years Frontend Web Mobile",
+    "React Native Firebase",
+    "Team Lead Frontend"
   ],
-  authors: [{ name: "Ram Surat", url: "https://ram-surat.dev" }],
+  authors: [{ name: "Ram Surat", url: siteUrl }],
   creator: "Ram Surat",
   publisher: "Ram Surat",
   icons: {
@@ -115,29 +128,31 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ram-surat.dev",
-    title: "Ram Surat | Frontend Developer | 3 Years Experience | React.js & Next.js Expert",
-    description: "Frontend Developer with 3 years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS. Experienced in coupon & discount logic, checkout flows, authentication, and performance-optimized interfaces. Passionate about clean code and high-quality user experiences.",
+    url: siteUrl,
+    title: "Ram Surat | Frontend Developer | 3 Years Web & Mobile | React.js & Next.js Expert",
+    description: ogDescription,
     siteName: "Ram Surat - Frontend Developer Portfolio",
     images: [
       {
-        url: "https://ram-surat.dev/ram-new.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Ram Surat - Frontend Developer with 3 Years Experience",
-        type: "image/jpeg",
-      }
+        url: OG_IMAGE_PATH,
+        width: ogImageWidth,
+        height: ogImageHeight,
+        alt: "Ram Surat — Frontend Developer, Web & Mobile, 3+ years experience",
+        type: "image/png",
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ram Surat | Frontend Developer | 3 Years Experience",
-    description: "Frontend Developer with 3 years of hands-on experience. Proficient in React.js, Next.js, JavaScript. Experienced in complex features like checkout flows, authentication, and performance-optimized interfaces. Passionate about clean code and high-quality UX.",
+    title: "Ram Surat | Frontend Developer | 3 Years Web & Mobile",
+    description: ogDescription,
     creator: "@ramsurat",
     site: "@ramsurat",
     images: {
-      url: "https://ram-surat.dev/ram-new.jpeg",
-      alt: "Ram Surat - Frontend Developer",
+      url: OG_IMAGE_PATH,
+      width: ogImageWidth,
+      height: ogImageHeight,
+      alt: "Ram Surat — Frontend Developer, Web & Mobile",
     },
   },
   robots: {
@@ -157,7 +172,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://ram-surat.dev",
+    canonical: siteUrl,
   },
   category: "technology",
 };
@@ -167,6 +182,127 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: "Ram Surat",
+        givenName: "Ram",
+        familyName: "Surat",
+        jobTitle: "Frontend Developer",
+        image: ogShareImage,
+        description:
+          "Frontend Developer with 3 years of hands-on frontend experience across web and mobile, including team leadership at Phantasm Solutions on ERP, e-commerce, and React Native applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, Firebase, and integrations such as payments, checkout, and authentication.",
+        url: siteUrl,
+        email: "surajkumar2315@gmail.com",
+        telephone: "+91 9793814970",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Mirzapur",
+          addressRegion: "Uttar Pradesh",
+          addressCountry: "India",
+        },
+        sameAs: [
+          "https://github.com/masaiff210880",
+          "https://www.linkedin.com/in/ram-surat-542877203/",
+          "https://twitter.com/ramsurat",
+        ],
+        knowsAbout: [
+          "Frontend Development",
+          "React.js",
+          "Next.js",
+          "React Native",
+          "JavaScript",
+          "TypeScript",
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+          "Redux",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "REST API",
+          "Firebase",
+          "Responsive Web Design",
+          "Single Page Applications",
+          "Progressive Web Apps",
+          "Mobile App Development",
+          "UI/UX Design",
+          "Git",
+          "Agile Development",
+        ],
+        alumniOf: {
+          "@type": "EducationalOrganization",
+          name: "Sams Institute of Technologies",
+        },
+        worksFor: {
+          "@type": "Organization",
+          name: "Phantasm Solutions Pvt Ltd",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "Ram Surat - Frontend Developer Portfolio",
+        description:
+          "Portfolio of Ram Surat — Frontend Developer with 3 years across web and mobile: React.js, Next.js, React Native, Firebase, and enterprise delivery at Phantasm Solutions.",
+        publisher: {
+          "@id": `${siteUrl}/#person`,
+        },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${siteUrl}/?s={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": `${siteUrl}/#profilepage`,
+        url: siteUrl,
+        name: "Ram Surat - Frontend Developer",
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: ogShareImage,
+        },
+        isPartOf: {
+          "@id": `${siteUrl}/#website`,
+        },
+        about: {
+          "@id": `${siteUrl}/#person`,
+        },
+        mainEntity: {
+          "@id": `${siteUrl}/#person`,
+        },
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service`,
+        name: "Frontend Development Services",
+        description:
+          "Professional frontend development services for web and mobile, including React.js, Next.js, React Native, responsive design, and single page applications.",
+        provider: {
+          "@id": `${siteUrl}/#person`,
+        },
+        serviceType: [
+          "Frontend Development",
+          "React.js Development",
+          "Next.js Development",
+          "React Native Development",
+          "Web Application Development",
+          "Mobile App Development",
+          "UI/UX Development",
+        ],
+        areaServed: {
+          "@type": "Country",
+          name: "Worldwide",
+        },
+      },
+    ],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
@@ -174,120 +310,16 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/ram-new.jpeg" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#667eea" />
+        <meta property="og:image" content={ogShareImage} />
+        <meta property="og:image:secure_url" content={ogShareImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content={String(ogImageWidth)} />
+        <meta property="og:image:height" content={String(ogImageHeight)} />
+        <meta name="twitter:image" content={ogShareImage} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Person",
-                  "@id": "https://ram-surat.dev/#person",
-                  name: "Ram Surat",
-                  givenName: "Ram",
-                  familyName: "Surat",
-                  jobTitle: "Frontend Developer",
-                  description: "Frontend Developer with 3 years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces.",
-                  url: "https://ram-surat.dev",
-                  email: "surajkumar2315@gmail.com",
-                  telephone: "+91 9793814970",
-                  address: {
-                    "@type": "PostalAddress",
-                    addressLocality: "Mirzapur",
-                    addressRegion: "Uttar Pradesh",
-                    addressCountry: "India"
-                  },
-                  sameAs: [
-                    "https://github.com/masaiff210880",
-                    "https://www.linkedin.com/in/ram-surat-542877203/",
-                    "https://twitter.com/ramsurat"
-                  ],
-                  knowsAbout: [
-                    "Frontend Development",
-                    "React.js",
-                    "Next.js",
-                    "React Native",
-                    "JavaScript",
-                    "TypeScript",
-                    "HTML5",
-                    "CSS3",
-                    "Tailwind CSS",
-                    "Redux",
-                    "Node.js",
-                    "Express.js",
-                    "MongoDB",
-                    "REST API",
-                    "Responsive Web Design",
-                    "Single Page Applications",
-                    "Progressive Web Apps",
-                    "Mobile App Development",
-                    "UI/UX Design",
-                    "Git",
-                    "Agile Development"
-                  ],
-                  alumniOf: {
-                    "@type": "EducationalOrganization",
-                    name: "Sams Institute of Technologies"
-                  },
-                  worksFor: {
-                    "@type": "Organization",
-                    name: "Phantasm Solutions Pvt Ltd"
-                  }
-                },
-                {
-                  "@type": "WebSite",
-                  "@id": "https://ram-surat.dev/#website",
-                  url: "https://ram-surat.dev",
-                  name: "Ram Surat - Frontend Developer Portfolio",
-                  description: "Portfolio website of Ram Surat, Expert Frontend Developer specializing in React.js, Next.js, and React Native development.",
-                  publisher: {
-                    "@id": "https://ram-surat.dev/#person"
-                  },
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: "https://ram-surat.dev/?s={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                  }
-                },
-                {
-                  "@type": "ProfilePage",
-                  "@id": "https://ram-surat.dev/#profilepage",
-                  url: "https://ram-surat.dev",
-                  name: "Ram Surat - Frontend Developer",
-                  isPartOf: {
-                    "@id": "https://ram-surat.dev/#website"
-                  },
-                  about: {
-                    "@id": "https://ram-surat.dev/#person"
-                  },
-                  mainEntity: {
-                    "@id": "https://ram-surat.dev/#person"
-                  }
-                },
-                {
-                  "@type": "Service",
-                  "@id": "https://ram-surat.dev/#service",
-                  name: "Frontend Development Services",
-                  description: "Professional frontend development services including React.js, Next.js, React Native development, responsive web design, and single page applications.",
-                  provider: {
-                    "@id": "https://ram-surat.dev/#person"
-                  },
-                  serviceType: [
-                    "Frontend Development",
-                    "React.js Development",
-                    "Next.js Development",
-                    "React Native Development",
-                    "Web Application Development",
-                    "Mobile App Development",
-                    "UI/UX Development"
-                  ],
-                  areaServed: {
-                    "@type": "Country",
-                    name: "Worldwide"
-                  }
-                }
-              ]
-            })
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>
