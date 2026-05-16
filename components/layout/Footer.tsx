@@ -113,16 +113,22 @@ export function Footer() {
           >
             <h3 className="font-semibold text-sm uppercase tracking-wider mb-3">Projects</h3>
             <ul className="space-y-2">
-              {PROJECTS.slice(0, 5).map((project) => (
+              {PROJECTS.slice(0, 8).map((project) => (
                 <li key={project.id}>
-                  <Link 
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground text-sm hover:text-foreground hover:translate-x-1 transition-all duration-200 inline-block"
-                  >
-                    {project.title}
-                  </Link>
+                  {project.live ? (
+                    <Link
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground text-sm hover:text-foreground hover:translate-x-1 transition-all duration-200 inline-block"
+                    >
+                      {project.title}
+                    </Link>
+                  ) : (
+                    <span className="text-muted-foreground text-sm cursor-default inline-block">
+                      {project.title}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

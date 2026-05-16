@@ -80,7 +80,7 @@ export default function About() {
               </div>
               <div className="bg-secondary/50 p-4 rounded-lg">
                 <h3 className="font-semibold mb-2">Experience</h3>
-                <p className="text-muted-foreground">3 Years</p>
+                <p className="text-muted-foreground">3 Years · Web & Mobile</p>
               </div>
             </div>
           </motion.div>

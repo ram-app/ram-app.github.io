@@ -1,10 +1,16 @@
+import type { PortfolioProject } from '@/lib/project-types';
+import project1Image from '@/app/assets/projects/Screenshot 2026-01-10 233956.png';
+import project2Image from '@/app/assets/projects/Screenshot 2026-01-10 234024.png';
+import project3Image from '@/app/assets/projects/Screenshot 2026-01-10 234054.png';
+import project4Image from '@/app/assets/projects/Screenshot 2026-01-10 234130.png';
+
 export const PERSONAL_INFO = {
   name: "Ram Surat",
   title: "Full Stack Developer",
   email: "ram.surat.web@gmail.com",
   phone: "+91 9793814970",
   location: "Sabesar,Kachhawa,Mirzapur,U.P",
-  bio: "Frontend Developer with 3 years of hands-on experience in building responsive, scalable, and user-friendly web applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces. Familiar with TypeScript, Node.js, and Express.js, with the ability to collaborate effectively with backend teams. Passionate about clean code, reusable components, and delivering high-quality user experiences in fast-paced environments.",
+  bio: "Frontend Developer with 3 years of hands-on frontend experience across web and mobile, building responsive, scalable, and user-friendly applications. Proficient in React.js, Next.js, JavaScript, HTML, CSS, and modern UI libraries. Experienced in developing complex features such as coupon & discount logic, checkout flows, authentication (login/guest mode), and performance-optimized interfaces. Familiar with TypeScript, Node.js, and Express.js, with the ability to collaborate effectively with backend teams. Passionate about clean code, reusable components, and delivering high-quality user experiences in fast-paced environments.",
   resume: "https://drive.google.com/file/d/1Aq2Od_m9EhaHS-frJYgDaciQazVD9rzt/view?usp=sharing",
   social: {
     github: "https://github.com/masaiff210880",
@@ -41,13 +47,108 @@ export const EXPERIENCE = [
   }
 ];
 
-// Project images
-import project1Image from '@/app/assets/projects/Screenshot 2026-01-10 233956.png';
-import project2Image from '@/app/assets/projects/Screenshot 2026-01-10 234024.png';
-import project3Image from '@/app/assets/projects/Screenshot 2026-01-10 234054.png';
-import project4Image from '@/app/assets/projects/Screenshot 2026-01-10 234130.png';
-
-export const PROJECTS = [
+export const PROJECTS: PortfolioProject[] = [
+  {
+    id: 10,
+    title: "Learning Management Mobile App (User Portal)",
+    period: "2025 – 2026",
+    description:
+      "Cross-platform LMS user app with live classes, paid courses, and streaming at scale for thousands of concurrent learners.",
+    highlights: [
+      "Live streaming at scale (Bunny CDN) and Zoom SDK for classes.",
+      "Search, filters, and free vs. paid course access rules.",
+      "Razorpay, lean APIs, and lazy loading for snappy UX.",
+    ],
+    image: "/projects/project-lms-mobile.png",
+    technologies: ["React Native", "Zoom SDK", "Bunny CDN", "Razorpay", "NativeWind"],
+    featured: true,
+  },
+  {
+    id: 11,
+    title: "NoteTracker App — Order & Workflow Management System",
+    period: "2025 – 2026",
+    description:
+      "Mobile order and workflow system with role-based access for admins, employees, and end users—from request through verification.",
+    highlights: [
+      "Roles: Admin, Employee, User with secure workflows.",
+      "Request→order flows; bulk merge/split and staff verification.",
+      "Live admin dashboard and employee onboarding with uploads.",
+    ],
+    image: "/projects/project-notetracker.png",
+    technologies: ["React Native", "Google Places Autocomplete", "NativeWind"],
+    featured: true,
+  },
+  {
+    id: 12,
+    title: "American Distributors",
+    period: "2025 – 2026",
+    description:
+      "React Native e-commerce and distribution app with Firebase backend, secure checkout, and App Store release workflow.",
+    highlights: [
+      "Firebase auth, catalog, and real-time commerce.",
+      "Payments and cloud/signing setup for store readiness.",
+      "Xcode builds and App Store release.",
+    ],
+    image: "/projects/project-american-distributors.png",
+    technologies: [
+      "React Native",
+      "Firebase",
+      "Google Cloud Console",
+      "Payment Gateway",
+      "NativeWind",
+      "Xcode",
+      "App Store",
+    ],
+    featured: true,
+  },
+  {
+    id: 13,
+    title: "Smokevana",
+    period: "2025 – 2026",
+    description:
+      "Mobile retail e-commerce experience with age verification, payments, and Firebase-backed integrations for regulated product categories.",
+    highlights: [
+      "Age-gated retail flows; Firebase catalog and auth.",
+      "Payment gateway for in-app checkout.",
+      "Xcode builds and App Store submission.",
+    ],
+    image: "/projects/project-smokevana.png",
+    technologies: [
+      "React Native",
+      "Firebase",
+      "Google Cloud Console",
+      "Age Verification",
+      "Payment Gateway",
+      "NativeWind",
+      "Xcode",
+      "App Store",
+    ],
+    featured: true,
+  },
+  {
+    id: 14,
+    title: "Green Street Distro",
+    period: "2025 – 2026",
+    description:
+      "Distribution-focused React Native storefront with Firebase services, payments, compliance checkpoints, and production mobile release.",
+    highlights: [
+      "Firebase commerce and cloud configuration end to end.",
+      "Age checks and gated access for eligible buyers.",
+      "Payments, subscriptions, Xcode, and App Store shipping.",
+    ],
+    image: "/projects/project-green-street-distro.png",
+    technologies: [
+      "React Native",
+      "Firebase",
+      "Google Cloud Console",
+      "Age Verification",
+      "Payment Gateway",
+      "NativeWind",
+      "Xcode",
+      "App Store",
+    ],
+    featured: true,
+  },
   {
     id: 5,
     title: "LMS Learning Management System - User Portal",
@@ -76,7 +177,7 @@ export const PROJECTS = [
     technologies: ["React", "Redux", "Chakra UI", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/masaiff210880/defeated-interest-8343",
     live: "https://frontend-vinaykumar7580.vercel.app/",
-    featured: true
+    featured: false
   },
   {
     id: 2,
@@ -86,7 +187,7 @@ export const PROJECTS = [
     technologies: ["React", "Redux", "Chakra UI", "JavaScript", "CSS"],
     github: "https://github.com/masaiff210880/-quick-jelly-9961",
     live: "https://medzplus.vercel.app/",
-    featured: true
+    featured: false
   },
   {
     id: 3,
@@ -128,6 +229,10 @@ export const SKILLS = {
     { name: "REST APIs", level: 90, icon: "ri-api-line" }
   ],
   tools: [
+    { name: "Firebase", level: 82, icon: "ri-fire-line" },
+    { name: "NativeWind", level: 85, icon: "ri-windy-line" },
+    { name: "Razorpay", level: 80, icon: "ri-bank-card-line" },
+    { name: "Xcode", level: 80, icon: "ri-hammer-line" },
     { name: "Tailwind CSS", level: 90, icon: "ri-css3-line" },
     { name: "Material UI", level: 90, icon: "ri-palette-line" },
     { name: "Bootstrap", level: 90, icon: "ri-layout-grid-line" },
